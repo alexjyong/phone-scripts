@@ -20,6 +20,14 @@ bash ~/phone-scripts/setup.sh
 - SSH (from same Wi-Fi): `ssh -p 8022 phone@<phone-ip>` — username is anything, password = Termux password (`passwd`).
 - code-server (browser): `http://<phone-ip>:8080` — password in `~/.config/code-server/config.yaml`, also printed on start.
 
+## Alex, why on Earth would you do this?
+
+- Because.
+
+- Modern smartphones have a bit more capable hardware than people would think. Obviously, you aren't going to replace your M5 Macbook Pro with this, buuut, I like the idea of "Hey, I can do some dev work with my phone, a usb hub, and a cheap monitor" (or connect to my phone with a Chromebook or something.)
+
+- To attach a bit more to the second point, I suppose it's also rooted in an anxious thought of "What if I needed/wanted to do dev work, but no longer had access to a decent 'real' computer?" Having scripts like this help with that anxiety. 
+
 ## Gotchas (2026-09, code-server 4.135.0)
 - `start-vscode.sh` injects `LD_PRELOAD=libtermux-exec.so` and patches VS Code's env
   sanitizer (`server-main.js`, `agentHostMain.js`, `extensionHostProcess.js` — removes
