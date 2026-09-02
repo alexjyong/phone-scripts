@@ -1,6 +1,6 @@
-# Phone server scripts (Termux)
+# Phone server scripts for Termux
 
-Installs a SSH server + code-server on a fresh Termux install.
+Installs a SSH server + code-server on [Termux](https://termux.dev/en/)
 
 This lets you use your phone or Termux friendly device as a development box, accessible via [code-server.](https://github.com/coder/code-server)
 
