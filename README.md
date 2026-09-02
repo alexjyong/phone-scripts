@@ -1,8 +1,10 @@
 # Phone server scripts (Termux)
 
-Restores the phone's SSH server + code-server on a fresh Termux install.
+Installs a SSH server + code-server on a fresh Termux install.
 
-## One-command restore
+This lets you use your phone or Termux friendly device as a development box, accessible via [code-server.](https://github.com/coder/code-server)
+
+## One-command setup
 ```
 bash ~/phone-scripts/setup.sh
 ```
@@ -25,5 +27,5 @@ bash ~/phone-scripts/setup.sh
   "execvp(3) failed.: Permission denied". The script re-applies the patch automatically
   after `pkg upgrade code-server`.
 - `pkg install code-server` requires `tur-repo` (Termux User Repository).
-- If the phone IP changed, just re-run a script — it prints the current one.
+- If the phone IP changed, just re-run a script — it prints the current one. I'd recommend using something like [tailscale](https://tailscale.com/) or [ngrok](https://ngrok.com/)if you want a static name.
 - `/tmp` is not writable in Termux; logs go to `~/tmp/`.
