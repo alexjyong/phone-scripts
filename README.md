@@ -28,6 +28,8 @@ bash ~/phone-scripts/setup.sh
 
 - To attach a bit more to the second point, I suppose it's also rooted in an anxious thought of "What if I needed/wanted to do dev work, but no longer had access to a decent 'real' computer?" Having scripts like this help with that anxiety. 
 
+- Projects like Winlator have gotten me to rethink what can be done on a modern smart phone. 
+
 ## Gotchas (2026-09, code-server 4.135.0)
 - `start-vscode.sh` injects `LD_PRELOAD=libtermux-exec.so` and patches VS Code's env
   sanitizer (`server-main.js`, `agentHostMain.js`, `extensionHostProcess.js` — removes
