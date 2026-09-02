@@ -15,7 +15,12 @@ pkg install -y code-server
 echo "[*] Installing scripts..."
 cp -v "$(dirname "$0")/start-ssh.sh"    "$HOME/"
 cp -v "$(dirname "$0")/start-vscode.sh" "$HOME/"
+cp -v "$(dirname "$0")/android-setup.sh" "$HOME/"
+cp -v "$(dirname "$0")/android-build.sh" "$HOME/"
+cp -v "$(dirname "$0")/android-test.sh"  "$HOME/"
+cp -v "$(dirname "$0")/phone-env.sh"     "$HOME/"
 chmod +x "$HOME/start-ssh.sh" "$HOME/start-vscode.sh"
+chmod +x "$HOME/android-setup.sh" "$HOME/android-build.sh" "$HOME/android-test.sh" "$HOME/phone-env.sh"
 
 echo
 echo "[*] Done. Start services with:"

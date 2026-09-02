@@ -2,6 +2,8 @@
 
 Installs a SSH server + code-server on [Termux](https://termux.dev/en/)
 
+Also helps set up an Android build environment as well.
+
 This lets you use your phone or Termux friendly device as a development box, accessible via [code-server.](https://github.com/coder/code-server)
 
 ## One-command setup
@@ -15,6 +17,22 @@ bash ~/phone-scripts/setup.sh
 | `start-ssh.sh` | Starts sshd on port 8022, wake-lock, prompts for password if unset, prints connect info. `stop` arg stops it. |
 | `start-vscode.sh` | Starts code-server on port 8080, wake-lock, prints URL + password. `stop` arg stops it. |
 | `setup.sh` | Fresh-Termux installer (packages + scripts). |
+| `android-setup.sh` | One-time Android build env (proot Ubuntu + JDK + SDK + aapt2) for a project: `android-setup.sh <project-dir>`. |
+| `android-build.sh` | Builds a project's debug APK in proot: `android-build.sh <project-dir>`. |
+| `android-test.sh` | Runs a project's JVM unit tests in proot: `android-test.sh <project-dir> [TestClass...]`. |
+| `phone-env.sh` | Sourced helper for the android scripts (paths, conf, proot runner). |
+
+## Android builds (Gradle in proot)
+
+```
+bash ~/phone-scripts/android-setup.sh ~/gitprojects/SomeProject   # one-time
+bash ~/phone-scripts/android-build.sh ~/gitprojects/SomeProject
+bash ~/phone-scripts/android-test.sh  ~/gitprojects/SomeProject [TestClass...]
+```
+
+Defaults fit a standard single-`:app` project; an optional `phone-build.conf`
+in the project root overrides module/tasks/APK path/platform/JDK (see
+`phone-env.sh`). Long runs: `setsid ... > log 2>&1 &` and keep the screen on.
 
 ## Connect
 - SSH (from same Wi-Fi): `ssh -p 8022 phone@<phone-ip>` — username is anything, password = Termux password (`passwd`).
